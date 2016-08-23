@@ -1,0 +1,30 @@
+{
+  "name": "test-app",
+  "version": "0.0.1",
+  "main": [
+    "test-app.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test",
+    "scripts",
+    ".github",
+    "px-percent-circle.png",
+    "OSS_Notice.pdf"
+  ],
+  "dependencies": {
+    "polymer": "^1.5.0",
+    "px-theme": "~0.8.0",
+    "px-modal": "~1.2.10",
+    "px-buttons-design": "~0.4.26",
+    "px-card": "~0.4.12"
+  },
+  "devDependencies": {
+    "px-starter-kit-design": "~0.5.5"
+  }
+}
