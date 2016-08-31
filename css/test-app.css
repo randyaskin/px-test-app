@@ -637,6 +637,13 @@ button.btn {
     box-shadow: none;
     background-color: #b1b1bc; }
 
+.list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .list-inline > li {
+    display: inline-block; }
+
 html {
   background-color: #3b3b3f; }
 
@@ -677,6 +684,16 @@ main {
   min-height: calc(100vh - 4rem);
   position: relative;
   width: 100%; }
+
+[role=contentinfo] {
+  font-size: 0.8rem;
+  line-height: 1.6666666667;
+  color: white;
+  height: 4rem; }
+
+[role=contentinfo] a, a:hover, a:focus, a:visited {
+  text-decoration: none;
+  color: white; }
 
 /*------------------------------------*    #CLEARFIX
 \*------------------------------------*/
@@ -749,6 +766,32 @@ main {
 .u-mv-- {
   margin-top: 0.3333333333rem !important;
   margin-bottom: 0.3333333333rem !important; }
+
+/**
+     * Add small margins.
+     */
+.u-m- {
+  margin: 0.6666666667rem !important; }
+
+.u-mt- {
+  margin-top: 0.6666666667rem !important; }
+
+.u-mr- {
+  margin-right: 0.6666666667rem !important; }
+
+.u-mb- {
+  margin-bottom: 0.6666666667rem !important; }
+
+.u-ml- {
+  margin-left: 0.6666666667rem !important; }
+
+.u-mh- {
+  margin-right: 0.6666666667rem !important;
+  margin-left: 0.6666666667rem !important; }
+
+.u-mv- {
+  margin-top: 0.6666666667rem !important;
+  margin-bottom: 0.6666666667rem !important; }
 
 /**
      * Remove margins.
