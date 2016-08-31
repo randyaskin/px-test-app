@@ -22,7 +22,8 @@
     "px-theme": "~0.8.0",
     "px-modal": "~1.2.10",
     "px-buttons-design": "~0.4.26",
-    "px-card": "~0.4.12"
+    "px-card": "~0.4.12",
+    "px-app-nav": "~1.7.6"
   },
   "devDependencies": {
     "px-starter-kit-design": "~0.5.5"

@@ -9,17 +9,70 @@
  */
 
 // Generic
+@import "px-normalize-design/_generic.normalize.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
 
 // Base
+@import "px-flexbox-design/_base.flexbox.scss";
+@import "px-viewport-design/_base.viewport.scss";
 
 // Component
-$inuit-enable-btn--primary: true;
-$inuit-enable-btn--tertiary: true;
+$inuit-enable-btn--primary      :   true;
+$inuit-enable-btn--tertiary     :   true;
 @import "px-buttons-design/_objects.buttons.scss";
 
-.btn--tertiary {
-  background-color: pink;
+html {
+  background-color: $gray9;
+}
+body {
+  min-height: calc(100vh - 4rem);
+}
+[role=banner] {
+  height: 4rem;
+  display: block;
+  margin: auto;
+}
+[role=banner] h1 {
+  font-size: 1.6rem;
+  line-height: 1.6666666667;
+  margin: 0;
+  line-height: 4rem;
+  font-weight: normal;
+  color: $gray4;
+  display: inline-block;
+}
+[role=banner] h1 svg path {
+  fill: $gray4;
+}
+[role=banner] h2 {
+  font-size: 1.6rem;
+  line-height: 1.6666666667;
+  margin: 0;
+  line-height: 4rem;
+  font-weight: normal;
+  color: $gray6;
+  display: inline-block;
+}
+.navbar {
+  position:relative;
+}
+main {
+  background-color: $gray7;
+  min-height: calc(100vh - 4rem);
+  position:relative;
+  width:100%;
 }
 
-
 // Trumps
+@import "inuit-clearfix/_trumps.clearfix.scss";
+$inuit-enable-margins                       :   true;
+$inuit-enable-margins--none                 :   true;
+$inuit-enable-margins--tiny                 :   true;
+$inuit-enable-margins--negative             :   true;
+$inuit-enable-margins--negative-tiny        :   true;
+$inuit-enable-paddings                      :   true;
+$inuit-enable-paddings--none                :   true;
+$inuit-enable-paddings--tiny                :   true;
+@import "px-spacing-design/_trumps.spacing.scss";
+@import "px-widths-design/_trumps.widths.scss";
