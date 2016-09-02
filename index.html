@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Test App</title>
   <link rel="stylesheet" type="text/css" href="css/test-app.css"/>
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="bower_components/px-theme/px-theme.html"/>
-  <link rel="import" href="bower_components/px-modal/px-modal.html"/>
-  <link rel="import" href="bower_components/px-card/px-card.html"/>
-  <link rel="import" href="bower_components/px-app-nav/px-app-nav.html"/>
+  <link rel="import" href="px-modal-test.html"/>
 </head>
 <body class="u-m0 u-p0">
   <header role="banner" class="u-mh">
@@ -22,14 +18,7 @@
   <div class="flex">
     <px-app-nav class="navbar" nav-items='[{"path":"tab1","icon":"fa-exclamation-triangle","eventName":"firstItem","label":"Alerts","href":"#tab1","class":"","selected":true}]'>
     </px-app-nav>
-    <main class="u-pt-- u-pr-- u-pl--" role="main">
-      <px-card header-text="Test Card" icon="fa-suitcase">
-        <px-modal modal-heading="Test" btn-modal-positive="OK" btn-modal-negative="Cancel">
-          <button class="btn btn--primary modal-trigger">Open Modal</button>
-          <p>Testing of px-modal</p>
-        </px-modal>
-      </px-card>
-    </main>
+    <px-modal-test></px-modal-test>
   </div>
   <footer class="flex flex--middle u-mh" role="contentinfo">
     <div class="viewport">
@@ -47,3 +36,4 @@
     </div>
   </footer>
 </body>
+</html>

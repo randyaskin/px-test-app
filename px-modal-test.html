@@ -1,0 +1,71 @@
+<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/px-theme/px-theme.html"/>
+<link rel="import" href="bower_components/px-modal/px-modal.html"/>
+<link rel="import" href="bower_components/px-card/px-card.html"/>
+<link rel="import" href="bower_components/px-app-nav/px-app-nav.html"/>
+
+<dom-module id="px-modal-test">
+  <template>
+  <style>:host {width:100%;}</style>
+  <link rel="import" type="text/css" href="css/test-app.css"/>
+    <main class="u-pt-- u-pr-- u-pl--" role="main">
+      <template is="dom-repeat" items="{{cards}}">
+        <px-card header-text="{{item.headerText}}" icon="fa-pencil">
+          <h5 class="u-mb0">Note:</h5>
+          <div class="u-mb" style="width:100%;text-align:left;border:1px solid light-grey;" disabled>
+            Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+          </div>
+          <px-modal id="{{item.modalId}}" modal-heading="{{item.modalHeading}}" btn-modal-positive="Submit" btn-modal-negative="Cancel" btn-modal-positive-clicked-event-name="add-note">
+            <button class="btn btn--primary modal-trigger">{{item.label}}</button>
+            <textarea id="textArea" style="width:300px; height:200px;" placeholder="Type notes here"></textarea>
+          </px-modal>
+        </px-card>
+      </template>
+    </main>
+  </template>
+  <script>
+    Polymer({
+      is: 'px-modal-test',
+      properties: {
+        cards: {
+          type: Array,
+          value: []
+        }
+      },
+      ready: function () {
+        this.cards = this.generateCards();
+      },
+      generateCards: function () {
+        var cardArray = [];
+        for(var i=1;i<101;i++) {
+          var cardObject = {
+            "cardId": "noteCard"+i,
+            "modalId": "modal"+i,
+            "headerText":"Note Card "+i,
+            "modalHeading":"Note Card "+i+": New Note",
+            "label":"Add Note"
+          };
+          cardArray.push(cardObject);
+        }
+        return cardArray;
+      }
+    });
+
+    window.addEventListener('add-note', function (evt) {
+      var modal = evt.target,
+          newHeader = document.createElement("h5"),
+          newNote = document.createElement("div")
+          parent = modal.parentNode;
+      newHeader.classList.add("u-mb0");
+      newHeader.innerHTML = "New Note:";
+      newNote.classList.add("u-mb");
+      newNote.style="width:100%;text-align:left;border:1px solid light-grey;"
+      newNote.disabled="disabled";
+      newNote.innerHTML = modal.querySelector("#textArea").value;
+      parent.insertBefore(newHeader,modal);
+      parent.insertBefore(newNote,modal);
+    });
+
+  </script>
+</dom-module>
